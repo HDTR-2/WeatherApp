@@ -1,0 +1,45 @@
+.thisDay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px 200px 0px;
+    color: #fff;
+}
+.weatherTemp {
+    font-size: 100px;
+}
+.info {
+    margin: 5px;
+    h2 {
+        line-height: 55%;
+        font-size: 100px;
+        margin: 0;
+    }
+    p {
+        margin: 0;
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .thisDay {
+        display: flex;
+        flex-direction: column;
+    }
+    .weatherTemp {
+        font-size: 80px;
+        line-height: 0;
+    }
+    .info {
+        margin: 5px;
+        h2 {
+            line-height: 55%;
+            font-size: 80px;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+            font-size: 40px;
+        }
+    }
+}

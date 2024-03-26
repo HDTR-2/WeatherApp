@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './styles/normolize.scss';
+import { Route, Routes } from 'react-router-dom';
+
+import ThisDay from './components/ThisDay/ThisDay';
+import { MainContainer } from './components/Main/MainContainer';
+
+import style from './styles/App.module.scss';
+import { useCustomDispathc, useCustomSelector } from './hooks/store';
+import { MoreWeatherContainer } from './components/MoreWeather/MoreWeatherContainer';
+import { fetchCurrentWeather } from './redux/Thunk/fetchCurrentWeather';
+import { fetchCurrentWeatherForecast } from './redux/Thunk/fetchCurrentWeatherForecast';
 
 function App() {
+  const dispatch = useCustomDispathc();
+
+  useEffect(() => {
+    dispatch(fetchCurrentWeather('Moscow'));
+    dispatch(fetchCurrentWeatherForecast('Moscow'));
+  }, []);
+
+  const { weather, forecast } = useCustomSelector((state) => ({
+    weather: state.CurrentWeatherSliceReducer.weather,
+    forecast: state.CurrentWeatherForecastSlicesReducer.forecast,
+  }));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className={style.appWrapper}>
+        <ThisDay weather={weather} />
+        <Routes>
+          <Route path="/*" element={<MainContainer weather={weather} />} />
+        </Routes>
+        <MoreWeatherContainer forecast={forecast} />
+      </div>
     </div>
   );
 }

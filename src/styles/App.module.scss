@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=El+Messiri:regular,500,600,700);
+.appWrapper {
+    height: 100vh;
+    background-color: rgba(2, 2, 2, 0.699);
+    font-family: "El Messiri";
+    background-size: cover;
+    background-image: url(./../assets/img/backgrounds/bg-rain.jpg);
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+}

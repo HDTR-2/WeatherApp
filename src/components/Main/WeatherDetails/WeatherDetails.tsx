@@ -14,8 +14,14 @@ export interface Item {
 }
 
 export const WeatherDetails = ({ weather }: Props) => {
-  let sunriseTime = new Date(weather.sys.sunrise * 1000).toLocaleTimeString();
-  let sunsetTime = new Date(weather.sys.sunset * 1000).toLocaleTimeString();
+  let sunriseTime = new Date(weather.sys.sunrise * 1000).toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  let sunsetTime = new Date(weather.sys.sunset * 1000).toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
   const items = [
     {
       icon: 'FaTemperatureArrowUp',

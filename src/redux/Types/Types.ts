@@ -20,6 +20,7 @@ export type Weather = {
   clouds: {
     all: number;
   };
+  dt: number;
   sys: {
     sunrise: number;
     sunset: number;

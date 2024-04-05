@@ -36,6 +36,7 @@ const initialState: CurrentWeather = {
     clouds: {
       all: 0,
     },
+    dt: 0,
     sys: {
       sunrise: 0,
       sunset: 0,

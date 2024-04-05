@@ -12,7 +12,7 @@ apiWeather.interceptors.request.use((config) => {
   return config;
 });
 apiForecast.interceptors.request.use((config) => {
-  config.url = config.url + '&cnt=7' + '&units=metric' + '&appid=' + process.env.REACT_APP_API_KEY;
+  config.url = config.url + '&cnt=8' + '&units=metric' + '&appid=' + process.env.REACT_APP_API_KEY;
   return config;
 });
 

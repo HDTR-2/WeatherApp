@@ -6,6 +6,13 @@ type Props = {
   weather: Weather;
 };
 
+const options: any = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+};
+
 const ThisDay = ({ weather }: Props) => {
   return (
     <div className={style.thisDay}>
@@ -15,7 +22,7 @@ const ThisDay = ({ weather }: Props) => {
       <div className={style.info}>
         <div>
           <h2>{weather.name}</h2>
-          <p>06:09-Monday,9 sep 23</p>
+          <p>{new Date(weather.dt * 1000).toLocaleDateString('en-En', options)}</p>
           <p>{weather.weather[0].main}</p>
         </div>
       </div>

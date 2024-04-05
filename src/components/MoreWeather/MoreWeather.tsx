@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './MoreWeather.module.scss';
-import { Tabs } from './Tabs';
 import { Forecast } from '../../redux/Types/Types';
 
 type Props = {
@@ -14,11 +13,13 @@ export const MoreWeather = ({ forecast }: Props) => {
   const days = [...forecast.list];
   return (
     <div>
-      <Tabs />
+      <div className={style.title}>
+        <h2>Forecast every 3 hours</h2>
+      </div>
       <div className={style.forecast}>
         {days.map((item) => (
           <div className={style.forecastDay}>
-            <h2>{new Date(item.dt_txt).toLocaleDateString('ru-RU', options)}</h2>
+            <h2>{new Date(item.dt_txt).toLocaleDateString('en-En', options)}</h2>
             <p>
               {new Date(item.dt_txt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </p>

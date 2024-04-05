@@ -1,4 +1,5 @@
 .wrapper {
+    z-index: 5;
     font-size: 30px;
     margin: 30px 0px 50px 30px;
     color: #fff;
@@ -21,5 +22,37 @@
     img {
         font-size: 35px;
         margin: 5px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .wrapper {
+        display: flex;
+    }
+    .weatherToday {
+        font-size: 20px;
+        gap: 2px;
+        h3,
+        p,
+        img {
+            font-size: 25px;
+            margin: 0px;
+        }
+    }
+}
+@media (max-width: 725px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .weatherToday {
+        flex-direction: column;
+        gap: 2px;
+        h3,
+        p,
+        img {
+            font-size: 25px;
+            margin: 0px;
+        }
     }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Location } from './Location/Location';
 import { WeatherToday } from './WeatherToday/WeatherToday';
 
 import style from './Main.module.scss';
@@ -13,7 +12,6 @@ type Props = {
 export const Main = ({ weather }: Props) => {
   return (
     <div className={style.wrapper}>
-      <Location weather={weather} />
       <div className={style.weather}>
         <WeatherToday weather={weather} />
         <WeatherDetails weather={weather} />

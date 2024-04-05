@@ -1,7 +1,5 @@
 import React from 'react';
 import style from '../WeatherToday.module.scss';
-
-import img from '../../../../assets/img/icons/cloud.svg';
 import { ItemWeather } from '../WeatherToday';
 
 interface Props {

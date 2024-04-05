@@ -1,0 +1,26 @@
+.changeCity {
+    z-index: 7;
+    width: 300px;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    font-size: 30px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+    }
+    span {
+        cursor: pointer;
+    }
+
+    @media (max-width: 1300px) {
+        right: 15%;
+    }
+}

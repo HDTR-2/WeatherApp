@@ -26,22 +26,22 @@ export const WeatherDetails = ({ weather }: Props) => {
     {
       icon: 'FaTemperatureArrowUp',
       name: 'Max temp',
-      value: `${Math.floor(weather.main.temp_max)}°`,
+      value: `${Math.floor(weather.main.temp_max)}°C`,
     },
     {
       icon: 'FaTemperatureArrowDown',
       name: 'Min temp',
-      value: `${Math.floor(weather.main.temp_min)}°`,
+      value: `${Math.floor(weather.main.temp_min)}°с`,
     },
     {
       icon: 'GiSunrise',
       name: 'Sunrize ',
-      value: `${sunriseTime}`,
+      value: `${sunriseTime} (мск)`,
     },
     {
       icon: 'GiSunset',
       name: 'Sunset',
-      value: `${sunsetTime}`,
+      value: `${sunsetTime} (мск)`,
     },
     {
       icon: 'IoMdCloudy',
@@ -51,7 +51,7 @@ export const WeatherDetails = ({ weather }: Props) => {
     {
       icon: 'FaWind',
       name: 'Wind',
-      value: `${weather.wind.speed.toFixed(1)} m/s`,
+      value: `${weather.wind.speed.toFixed(1)} м/с`,
     },
     {
       icon: 'WiHumidity',

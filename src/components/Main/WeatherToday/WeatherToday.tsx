@@ -19,7 +19,7 @@ export const WeatherToday = ({ weather }: Props) => {
     {
       date: 'Now',
       icon: `${weather.weather[0].icon}`,
-      temp: `${Math.floor(weather.main.temp)}°`,
+      temp: `${Math.floor(weather.main.temp)}°C`,
       feels_like: `${Math.floor(weather.main.feels_like)}°`,
     },
   ];
